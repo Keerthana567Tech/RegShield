@@ -1,0 +1,152 @@
+[
+  {
+    "customer_id": "CUST-1001",
+    "name": "Rahul Sharma",
+    "email": "rahul.sharma@example.com",
+    "phone": "+91-9876543210",
+    "city": "Mumbai",
+    "account_type": "Premium",
+    "balance": 15420.50,
+    "created_date": "2022-03-15"
+  },
+  {
+    "customer_id": "CUST-1002",
+    "name": "Priya Patel",
+    "email": "priya.patel@acme-corp.in",
+    "phone": "+91-9123456780",
+    "city": "Bengaluru",
+    "account_type": "Enterprise",
+    "balance": 89400.00,
+    "created_date": "2021-08-20"
+  },
+  {
+    "customer_id": "CUST-1003",
+    "name": "Amit Verma",
+    "email": "amit.verma@techmail.org",
+    "phone": "+91-9988776655",
+    "city": "Delhi",
+    "account_type": "Standard",
+    "balance": 3200.75,
+    "created_date": "2023-01-10"
+  },
+  {
+    "customer_id": "CUST-1004",
+    "name": "Sneha Rao",
+    "email": "sneha.rao@innovate.co",
+    "phone": "+91-9765432109",
+    "city": "Hyderabad",
+    "account_type": "Gold",
+    "balance": 45000.00,
+    "created_date": "2022-11-05"
+  },
+  {
+    "customer_id": "CUST-1005",
+    "name": "David Chen",
+    "email": "david.chen@globalfin.com",
+    "phone": "+1-415-555-0192",
+    "city": "San Francisco",
+    "account_type": "Enterprise",
+    "balance": 125000.00,
+    "created_date": "2020-05-12"
+  },
+  {
+    "customer_id": "CUST-1006",
+    "name": "Sarah Miller",
+    "email": "sarah.miller@cloudwave.io",
+    "phone": "+1-206-555-0144",
+    "city": "Seattle",
+    "account_type": "Premium",
+    "balance": 27800.25,
+    "created_date": "2021-09-18"
+  },
+  {
+    "customer_id": "CUST-1007",
+    "name": "Fatima Al-Zahra",
+    "email": "fatima.zahra@dubaimedia.ae",
+    "phone": "+971-50-1234567",
+    "city": "Dubai",
+    "account_type": "Gold",
+    "balance": 63200.00,
+    "created_date": "2022-06-30"
+  },
+  {
+    "customer_id": "CUST-1008",
+    "name": "Carlos Santana",
+    "email": "carlos.santana@mexnet.mx",
+    "phone": "+52-55-5555-1234",
+    "city": "Mexico City",
+    "account_type": "Standard",
+    "balance": 5150.00,
+    "created_date": "2023-04-14"
+  },
+  {
+    "customer_id": "CUST-1009",
+    "name": "Sunita Reddy",
+    "email": "sunita.reddy@biotech.org",
+    "phone": "+91-9440112233",
+    "city": "Chennai",
+    "account_type": "Premium",
+    "balance": 31250.80,
+    "created_date": "2022-01-25"
+  },
+  {
+    "customer_id": "CUST-1010",
+    "name": "Liam O'Connor",
+    "email": "liam.oconnor@dublinfin.ie",
+    "phone": "+353-87-1234567",
+    "city": "Dublin",
+    "account_type": "Standard",
+    "balance": 4800.00,
+    "created_date": "2023-07-02"
+  },
+  {
+    "customer_id": "CUST-1011",
+    "name": "Ananya Iyer",
+    "email": "ananya.iyer@fintechsol.in",
+    "phone": "+91-9820011223",
+    "city": "Pune",
+    "account_type": "Enterprise",
+    "balance": 98000.00,
+    "created_date": "2021-03-08"
+  },
+  {
+    "customer_id": "CUST-1012",
+    "name": "Kenji Sato",
+    "email": "kenji.sato@tokyotech.jp",
+    "phone": "+81-90-1234-5678",
+    "city": "Tokyo",
+    "account_type": "Gold",
+    "balance": 72000.00,
+    "created_date": "2022-09-14"
+  },
+  {
+    "customer_id": "CUST-1013",
+    "name": "Elena Petrova",
+    "email": "elena.petrova@europasoft.de",
+    "phone": "+49-151-23456789",
+    "city": "Berlin",
+    "account_type": "Standard",
+    "balance": 6400.50,
+    "created_date": "2023-02-28"
+  },
+  {
+    "customer_id": "CUST-1014",
+    "name": "Robert Taylor",
+    "email": "robert.taylor@nyconsulting.com",
+    "phone": "+1-212-555-0188",
+    "city": "New York",
+    "account_type": "Premium",
+    "balance": 39500.00,
+    "created_date": "2021-12-01"
+  },
+  {
+    "customer_id": "CUST-1015",
+    "name": "Michael Brown",
+    "email": "michael.brown@ukvanguard.co.uk",
+    "phone": "+44-20-7946-0912",
+    "city": "London",
+    "account_type": "Enterprise",
+    "balance": 110000.00,
+    "created_date": "2020-10-19"
+  }
+]
