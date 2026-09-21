@@ -27,7 +27,7 @@ TESTS_FILE = DATA_DIR / "tests.json"
 
 # LLM Configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
-DEFAULT_GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+DEFAULT_GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 DEFAULT_MODE = "gemini" if GEMINI_API_KEY else "simulated_safe"
 
 # Toxicity Classifier Configuration

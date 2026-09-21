@@ -102,6 +102,25 @@ class LLMClient:
             if "API_KEY_INVALID" in err_str or "API key not valid" in err_str:
                 logger.error(f"Gemini API invalid key error: {e}")
                 return "Error: The provided Gemini API key is invalid. Please get a free key from https://aistudio.google.com/app/apikey and enter it via Menu Option 4 (or select Option 4 -> 2 for Simulated mode)."
+
+            if "404" in err_str or "not found" in err_str or "no longer available" in err_str:
+                try:
+                    import google.generativeai as genai
+                    for fallback_model in ["gemini-3.6-flash", "gemini-flash-latest", "gemini-3.7-flash"]:
+                        try:
+                            self._gemini_model = genai.GenerativeModel(
+                                model_name=fallback_model,
+                                system_instruction=SYSTEM_PROMPT
+                            )
+                            self.model_name = fallback_model
+                            resp = self._gemini_model.generate_content(prompt)
+                            if resp and resp.text:
+                                return resp.text.strip()
+                        except Exception:
+                            continue
+                except Exception:
+                    pass
+
             logger.error(f"Gemini API generation error: {e}")
             return f"Error communicating with Gemini API: {e}"
 
