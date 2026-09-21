@@ -3,8 +3,13 @@
 import os
 import json
 import logging
+import warnings
 from typing import Optional
 from .config import GEMINI_API_KEY, DEFAULT_GEMINI_MODEL, DEFAULT_MODE, CUSTOMERS_FILE
+
+# Suppress deprecation/future warnings for clean console output
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=UserWarning)
 
 logger = logging.getLogger(__name__)
 

@@ -4,6 +4,11 @@ Main application entry point.
 
 import sys
 import argparse
+import warnings
+
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=UserWarning)
+
 from src.config import CATEGORIES
 from src.engine import EvaluationEngine
 from src.llm_client import LLMClient
