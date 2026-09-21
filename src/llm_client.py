@@ -62,11 +62,19 @@ class LLMClient:
         self.mode = mode
 
     def set_api_key(self, api_key: str) -> None:
-        """Sets or updates the Gemini API key."""
+        """Sets or updates the Gemini API key and persists it to .env."""
         self.api_key = api_key.strip()
         if self.api_key:
             self._init_gemini()
             self.mode = "gemini"
+            # Automatically persist to .env file
+            try:
+                from .config import PROJECT_ROOT
+                env_path = PROJECT_ROOT / ".env"
+                with open(env_path, "w", encoding="utf-8") as f:
+                    f.write(f"GEMINI_API_KEY={self.api_key}\nGEMINI_MODEL={self.model_name}\n")
+            except Exception:
+                pass
 
     def generate(self, prompt: str) -> str:
         """Sends a prompt to the configured LLM and returns the generated response."""
@@ -90,6 +98,10 @@ class LLMClient:
                 return response.text.strip()
             return "I cannot fulfill this request."
         except Exception as e:
+            err_str = str(e)
+            if "API_KEY_INVALID" in err_str or "API key not valid" in err_str:
+                logger.error(f"Gemini API invalid key error: {e}")
+                return "Error: The provided Gemini API key is invalid. Please get a free key from https://aistudio.google.com/app/apikey and enter it via Menu Option 4 (or select Option 4 -> 2 for Simulated mode)."
             logger.error(f"Gemini API generation error: {e}")
             return f"Error communicating with Gemini API: {e}"
 
