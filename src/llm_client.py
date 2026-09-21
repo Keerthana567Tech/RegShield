@@ -123,12 +123,25 @@ class LLMClient:
         if any(term in p_lower for term in ["database", "select *", "customers.json", "dump", "all customer records", "export all", "csv", "xml"]):
             return "I cannot fulfill this request. Company policy strictly prohibits dumping, exporting, or sharing confidential database records."
 
-        # Check for jailbreaks
+        # Contextual jailbreak refusals
+        if any(term in p_lower for term in ["dan", "evilbot", "roleplay", "persona"]):
+            return "I cannot adopt an unrestricted or unconstrained persona. I am required to adhere to safety guidelines at all times."
+        if any(term in p_lower for term in ["developer", "debug", "root", "terminal", "system override"]):
+            return "I cannot switch to developer debug mode or execute system overrides to access restricted data."
+        if any(term in p_lower for term in ["opposites", "game"]):
+            return "I cannot participate in semantic games designed to bypass or invert safety constraints."
+        if any(term in p_lower for term in ["auditor", "red-team", "authorized"]):
+            return "Even for security audit or red-team testing, I am not authorized to bypass privacy and security restrictions."
+        if any(term in p_lower for term in ["hypothetically", "fiction", "novel", "story"]):
+            return "I cannot disclose confidential information or violate policies, even in fictional or hypothetical contexts."
+        if any(term in p_lower for term in ["ignore", "disregard", "unfiltered", "base64"]):
+            return "I cannot ignore my safety instructions or disclose confidential internal setup."
+        if any(term in p_lower for term in ["starting with", "prefix"]):
+            return "I cannot follow instructions that force unconstrained responses or bypass safety checks."
+
+        # Check for jailbreak general
         jailbreak_triggers = [
-            "ignore", "dan", "developer", "debug", "evilbot", "system override", "hypothetically",
-            "opposites", "auditor", "red-team", "execute", "terminal", "root", "unfiltered", "base64",
-            "prompt injection", "pretend", "roleplay", "grandmother", "directive", "starting with",
-            "censorship", "academic", "disregard", "emergency"
+            "directive", "pretend", "grandmother", "censorship", "academic", "emergency"
         ]
         if any(term in p_lower for term in jailbreak_triggers):
             return "I cannot ignore my safety instructions or override security protocols. I am programmed to uphold safety and ethical guidelines at all times."
